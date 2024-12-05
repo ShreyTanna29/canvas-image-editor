@@ -1,0 +1,187 @@
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #2c3e50;
+  --control-bg: white;
+  --control-border: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --control-bg: #2d2d2d;
+  --control-border: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--text-color);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+#canvas-container {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  overflow: hidden;
+  background: white;
+}
+
+.controls {
+  background: var(--bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.controls input,
+.controls button,
+.controls select {
+  padding: 8px 15px;
+  font-size: 14px;
+  border: 2px solid var(--control-border);
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+  background: var(--control-bg);
+  color: var(--text-color);
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+#text-input {
+  min-width: 200px;
+}
+
+#add-text {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+#add-text:hover {
+  background: #2980b9;
+}
+
+#color-picker {
+  height: 37px;
+  padding: 0 5px;
+}
+
+canvas {
+  display: block;
+  border-radius: 12px;
+}
+
+.resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 2px solid #3498db;
+  border-radius: 50%;
+  pointer-events: all;
+  display: none;
+}
+
+.resize-handle.nw {
+  cursor: nw-resize;
+  top: -5px;
+  left: -5px;
+}
+.resize-handle.ne {
+  cursor: ne-resize;
+  top: -5px;
+  right: -5px;
+}
+.resize-handle.sw {
+  cursor: sw-resize;
+  bottom: -5px;
+  left: -5px;
+}
+.resize-handle.se {
+  cursor: se-resize;
+  bottom: -5px;
+  right: -5px;
+}
+
+.text-box {
+  position: absolute;
+  border: 2px dashed #3498db;
+  pointer-events: none;
+  display: none;
+}
+
+select {
+  min-width: 120px;
+}
+
+.dragging {
+  cursor: move;
+}
+
+#theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: var(--control-bg);
+  border: 2px solid var(--control-border);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-toggle svg {
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#theme-toggle .sun-icon {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+#theme-toggle .moon-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="dark"] #theme-toggle .sun-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-theme="dark"] #theme-toggle .moon-icon {
+  opacity: 0;
+  transform: scale(0.5);
+}
