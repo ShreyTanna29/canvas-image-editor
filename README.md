@@ -27,6 +27,11 @@ A powerful web-based tool for adding and manipulating text overlays on images wi
   - Persistent theme preference: theme prefrense is stored in local storage so whenver you refresh or visit next time your theme is as it is.
   - Clean SVG icons
 
+## Technical Details
+
+- Built with vanilla JavaScript
+- Uses HTML5 Canvas for rendering
+- No external dependencies except swiper.js
 
 ## video
 
