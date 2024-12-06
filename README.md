@@ -1,6 +1,9 @@
 # Canvas Image Text Editor
 
-A powerful web-based tool for adding and manipulating text overlays on images with a modern, user-friendly interface.
+A powerful web-based tool for adding and manipulating text overlays on images with a modern, 
+user-friendly interface. I have focused more on functionality part and not on UI part.
+
+## live site
 watch live site : https://canvas-image-editor-alpha.vercel.app/
 
 ## Features
